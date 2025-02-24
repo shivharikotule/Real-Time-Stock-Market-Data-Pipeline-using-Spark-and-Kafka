@@ -1,0 +1,33 @@
+
+Financial market which generates big amount of stock market data, making it helpful for traders, analysts and institutes to have data processing systems.
+
+We created a Real-Time Stock Market Data
+Pipeline, using Apache Spark, Apache Kafka, Amazon S3, and Apache Airflow.
+
+Fetch Real-Time Stock Data using Alpha Vantage API
+The pipeline retrieves live stock prices which include open, high, low, close and volume of data. Also we can fetch the data which has time interval of hourly, daily, weekly, monthly and yearly for data analyasis purpose.
+
+API requests are optimized to handle rate limits and ensure continuous data flow.
+
+Ingest Data into Apache Kafka
+Once stock data is fetched, it is ingested into Apache Kafka, a distributed streaming platform.
+Kafka acts as a real-time message broker, allowing data to be processed in a fault tolerant and scalable manner. Stream Data to a Kafka Topic
+Kafka distributes incoming stock data processing.
+
+Suppose if we are getting the data of multiple stock we are going to store in multiple kafka topics for parallel processing.
+
+Processing Data with Apache Spark Structured Streaming
+Apache Spark Structured Streaming continuously reads data from Kafka and stores it into a spark dataframe.
+
+As we fetched the data of IBM stock, the data is cleaned and we perform tranformation operation that is we calculate 5 minute moving averages.
+Also we can do futher more analysis by doing transformations operations to make it more readable and processed data.
+
+The processed IBM stock market data is going to store in Amazon S3, a cloud based object storage sevice.
+
+All this process is going to orchestrate with apache airfow from ingestion to storage.
+
+
+
+
+
+
